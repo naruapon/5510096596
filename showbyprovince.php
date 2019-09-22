@@ -13,7 +13,12 @@
 		die("Connection failed: " . $conn->connect_error);
 	}
 	//echo "Connected successfully";
-	mysqli_set_charset($conn, "utf8");
+    mysqli_set_charset($conn, "utf8");
+    
+	$province = $_POST["province"]; 
+	//echo $province; 
+	//echo "<br/>";
+
 	
     echo "<table style=\"width:100%\" cellspacing=\"0\" bgcolor=\"#ccccff\">";
     echo"<tr>";
@@ -23,7 +28,7 @@
     echo"</tr>";
 
     //$sql = "SELECT suuid, suname, suprovince FROM user";
-    $sql = "SELECT * FROM user";
+    $sql = "SELECT * FROM user where suprovince='$province'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -50,6 +55,7 @@
 
     echo "</table>";
 	
-	$conn->close();
+    $conn->close();
     echo"<a href=\"http://localhost/5510096596/formtest.html\">หน้าฟอร์ม</a>";
+ 
 ?>
