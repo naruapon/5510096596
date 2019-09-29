@@ -14,7 +14,20 @@
 	}
 	//echo "Connected successfully";
 	mysqli_set_charset($conn, "utf8");
-	
+    
+    $suid = $_GET["suid"]; 
+    if($suid){
+        echo "Has value<br/>";
+       
+        $sql = "DELETE from user where suuid='$suid'";
+        
+        if ($conn->query($sql) === TRUE) {
+            echo "Deleting successfully";
+        } else {
+            echo "Error deleting: " . $conn->error;
+        }        
+    }
+
     echo "<table style=\"width:100%\" cellspacing=\"0\" bgcolor=\"#ccccff\">";
     echo"<tr>";
       echo"<th> ID </th>";
@@ -32,13 +45,13 @@
             //echo "id: " . $row["suuid"]. " - Name: " . $row["suname"]. "- Province " . $row["suprovince"]. "<br>";
             if($row["suuid"]%2==0){
                 echo "<tr>";
-                echo "<td bgcolor=\"blue\"><center><font color=\"#ffffff\"> ".$row["suuid"]."</font></center></td>";
+                echo "<td bgcolor=\"blue\"><center><font color=\"#ffffff\"><a href=\"http://localhost/5510096596/show.php?suid=".$row["suuid"]."\">".$row["suuid"]."</a></font></center></td>";
                 echo "<td bgcolor=\"#ffffcc\"><center>".$row["suname"]."</center></td>";
                 echo "<td bgcolor=\"#ffffcc\"><center>".$row["suprovince"]."</center></td>";
                 echo "</tr>";
             }else{
                 echo "<tr>";
-                echo "<td bgcolor=\"red\"><center><font color=\"#ffffff\"> ".$row["suuid"]."</font></center></td>";
+                echo "<td bgcolor=\"red\"><center><font color=\"#ffffff\"> <a href=\"http://localhost/5510096596/show.php?suid=".$row["suuid"]."\">".$row["suuid"]."</a></font></center></td>";
                 echo "<td bgcolor=\"#e6f9ff\"><center>".$row["suname"]."</center></td>";
                 echo "<td bgcolor=\"#e6f9ff\"><center>".$row["suprovince"]."</center></td>";
                 echo "</tr>"; 
