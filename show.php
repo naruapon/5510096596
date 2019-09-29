@@ -16,17 +16,17 @@
 	mysqli_set_charset($conn, "utf8");
     
     $suid = $_GET["suid"]; 
-    if($suid){
-        echo "Has value<br/>";
-       
-        $sql = "DELETE from user where suuid='$suid'";
+        if($suid){
+            echo "Has value<br/>";
         
-        if ($conn->query($sql) === TRUE) {
-            echo "Deleting successfully";
-        } else {
-            echo "Error deleting: " . $conn->error;
-        }        
-    }
+            $sql = "DELETE from user where suuid='$suid'";
+            
+            if ($conn->query($sql) === TRUE) {
+                echo "Deleting successfully";
+            } else {
+                echo "Error deleting: " . $conn->error;
+            }        
+        }
 
     echo "<table style=\"width:100%\" cellspacing=\"0\" bgcolor=\"#ccccff\">";
     echo"<tr>";
