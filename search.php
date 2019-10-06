@@ -37,6 +37,7 @@
       echo"<th> ID </th>";
       echo"<th> Username </th>";
       echo"<th> Province</th>";
+      echo"<th> Edit</th>";
     echo"</tr>";
 
     //$sql = "SELECT suuid, suname, suprovince FROM user";
@@ -52,12 +53,14 @@
                 echo "<td bgcolor=\"blue\"><center><font color=\"#ffffff\"><a href=\"http://localhost/5510096596/show.php?suid=".$row["suuid"]."\">".$row["suuid"]."</a></font></center></td>";
                 echo "<td bgcolor=\"#ffffcc\"><center>".$row["suname"]."</center></td>";
                 echo "<td bgcolor=\"#ffffcc\"><center>".$row["suprovince"]."</center></td>";
+                echo "<td bgcolor=\"#ffffcc\"><center><a href=\"http://localhost/5510096596/edit.php?suid=".$row["suuid"]."\"><img width=\"50\" height=\"50\" src=\"./img/images.png\"></a></center></td>";
                 echo "</tr>";
             }else{
                 echo "<tr>";
                 echo "<td bgcolor=\"red\"><center><font color=\"#ffffff\"> <a href=\"http://localhost/5510096596/show.php?suid=".$row["suuid"]."\">".$row["suuid"]."</a></font></center></td>";
                 echo "<td bgcolor=\"#e6f9ff\"><center>".$row["suname"]."</center></td>";
                 echo "<td bgcolor=\"#e6f9ff\"><center>".$row["suprovince"]."</center></td>";
+                echo "<td bgcolor=\"#e6f9ff\"><center><a href=\"http://localhost/5510096596/edit.php?suid=".$row["suuid"]."\"><img width=\"50\" height=\"50\" src=\"./img/images.png\"></a></center></td>";
                 echo "</tr>"; 
             }
         }
