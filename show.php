@@ -1,6 +1,17 @@
 <?php 
- 
-	$servername = "localhost";
+     //setcookie('valid_user',1,time()+60);
+     
+   if(isset($_COOKIE['myfcolor']) && isset($_COOKIE['usize']) && isset($_COOKIE['username'])){
+        echo "<p align=\"right\"><font color=\"".$_COOKIE['myfcolor']."\" size=\"".$_COOKIE['usize']."\">".$_COOKIE['username']."</font></p>";
+        echo "<p align=\"right\"><a href=\"logout.php\">ออกจากระบบ</a></p>";
+    }else{
+
+   }
+    
+
+ if(isset($_COOKIE["valid_user"])){ 
+    // แสดงข้อมูลผู้ใช้ในฐานข้อมูล
+    $servername = "localhost";
 	$username = "root";
 	$password = "";
 	$dbname = "shop";
@@ -15,18 +26,19 @@
 	//echo "Connected successfully";
 	mysqli_set_charset($conn, "utf8");
     
-    $suid = $_GET["suid"]; 
-        if($suid){
-            echo "Has value<br/>";
+
+    // $suid = $_GET["suid"]; 
+    //     if($suid){
+    //         echo "Has value<br/>";
         
-            $sql = "DELETE from user where suuid='$suid'";
+    //         $sql = "DELETE from user where suuid='$suid'";
             
-            if ($conn->query($sql) === TRUE) {
-                echo "Deleting successfully";
-            } else {
-                echo "Error deleting: " . $conn->error;
-            }        
-        }
+    //         if ($conn->query($sql) === TRUE) {
+    //             echo "Deleting successfully";
+    //         } else {
+    //             echo "Error deleting: " . $conn->error;
+    //         }        
+    //     }
 
     echo "<table style=\"width:100%\" cellspacing=\"0\" bgcolor=\"#ccccff\">";
     echo"<tr>";
@@ -65,4 +77,10 @@
 	
 	$conn->close();
     echo"<a href=\"http://localhost/5510096596/formtest.html\">หน้าฟอร์ม</a>";
+}else{
+    // แสดง link ไปหน้าล็อกอิน index.html
+    echo"<a href=\"http://localhost/5510096596/\">ไปยังหน้าล็อกอิน</a>";
+}
+
+
 ?>
