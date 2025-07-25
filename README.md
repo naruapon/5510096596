@@ -1,6 +1,6 @@
 # PHP Sample Application
 
-This repository contains a small PHP and HTML application that demonstrates basic user management features. The pages rely on a MySQL database named `shop` and use simple forms for login, registration and searching.
+This repository contains a small PHP and HTML application that demonstrates basic user management features. The pages rely on a MySQL database named `shop` and use simple forms for login, registration and searching. An additional script showcases how to insert data using PHP's PDO extension.
 
 ## Setup
 
@@ -24,6 +24,7 @@ This repository contains a small PHP and HTML application that demonstrates basi
 - **logout.php** – clears cookies created during login.
 - **formtest.html** – registration form used by `test.php`.
 - **test.php** – inserts a new user into the database and shows submitted values.
+- **test_pdo.php** – alternative registration handler that demonstrates using PDO for database access.
 - **formprovince.html** and **showbyprovince.php** – show users filtered by province.
 - **search.php** – search users by name.
 - **edit.php** – page for editing a user (expects a missing `update.php`).
