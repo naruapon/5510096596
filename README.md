@@ -37,3 +37,5 @@ The `img` directory contains a sample image used by some of the pages.
 
 This code is provided for demonstration purposes and does not include authentication best practices. Passwords are stored in plain text and no input validation is implemented.
 
+
+สมเกียรติ
